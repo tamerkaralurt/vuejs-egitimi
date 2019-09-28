@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d8bb2d7-273c-430c-9ed6-32a633e7b211" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/uzMan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/uzMan.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2/9-computed.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2/9-computed.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B2/10-watchers.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,8 +64,16 @@
       <updated>1569669656586</updated>
       <workItem from="1569669657657" duration="14570000" />
       <workItem from="1569696956127" duration="966000" />
-      <workItem from="1569706989056" duration="1232000" />
+      <workItem from="1569706989056" duration="1284000" />
     </task>
+    <task id="LOCAL-00001" summary="9-computed tamamlandı">
+      <created>1569708257239</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569708257239</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,5 +89,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="9-computed tamamlandı" />
+    <option name="LAST_COMMIT_MESSAGE" value="9-computed tamamlandı" />
   </component>
 </project>
