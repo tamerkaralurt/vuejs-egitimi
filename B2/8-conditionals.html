@@ -8,11 +8,40 @@
   </head>
   <body class="p-5">
     <div id="app">
+      <input type="text" class="form-control" v-model="isim" />
+      <span v-if="isim.length > 0">{{ isim.length }}</span>
+      <br />
+      <!-- isim uzunluğu sıfırdan büyükse gösterilsin. -->
+      <hr />
       <div v-if="isVisibleDetaylar">
+        <!-- v-if ile işaretlenen nesneler dom üzerinden koşul sağlanmadığında tamamen kaldırılır. -->
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
         facilis expedita ab at quidem asperiores nam repellendus cupiditate vero
         iusto. Cumque, dignissimos. Error laboriosam repellendus excepturi
         facere aliquam maiores modi.
+      </div>
+      <div v-show="isVisibleDetaylar">
+        <!-- v-show ile işaretlenen nesneler dom üzerinde sadece gizlenir. -->
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore
+        saepe officiis deserunt! Assumenda nobis enim ratione doloremque nisi
+        sint nesciunt quisquam quaerat consectetur et a, perspiciatis aut eius
+        asperiores facere!
+      </div>
+      <button class="btn btn-success" @click="gosterGizle">Göster/Gizle</button>
+      <hr />
+      <select v-model="userType" class="form-control">
+        <option value="">Seçiniz</option>
+        <option>Müşteri</option>
+        <option>Yönetici</option>
+      </select>
+      <div v-if="userType === 'Müşteri'">
+        <h3>Müşteri Bilgileri</h3>
+      </div>
+      <div v-else-if="userType === 'Yönetici'">
+        <h3>Yönetici Bilgileri</h3>
+      </div>
+      <div v-else>
+        <h3>Diğer Bilgileri</h3>
       </div>
     </div>
 
@@ -22,7 +51,14 @@
         el: "#app",
         name: "Uzaktan Kurs",
         data: {
-          isVisibleDetaylar: true
+          isVisibleDetaylar: true,
+          isim: "Tamer",
+          userType: ""
+        },
+        methods: {
+          gosterGizle() {
+            this.isVisibleDetaylar = !this.isVisibleDetaylar;
+          }
         }
       });
     </script>
