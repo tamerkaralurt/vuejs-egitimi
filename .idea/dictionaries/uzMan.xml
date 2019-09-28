@@ -2,13 +2,20 @@
   <dictionary name="uzMan">
     <words>
       <w>aciklama</w>
+      <w>alanında</w>
       <w>ancak</w>
       <w>anlamına</w>
+      <w>arttıran</w>
       <w>basarili</w>
       <w>başlayarak</w>
       <w>beyaz</w>
       <w>böylece</w>
       <w>daha</w>
+      <w>değer</w>
+      <w>değere</w>
+      <w>değerler</w>
+      <w>değerleri</w>
+      <w>değişim</w>
       <w>değişken</w>
       <w>değişmeyecek</w>
       <w>değiştikten</w>
@@ -16,17 +23,21 @@
       <w>eklendi</w>
       <w>eklendiğinde</w>
       <w>engelleme</w>
+      <w>eski</w>
       <w>gelir</w>
       <w>geliyor</w>
       <w>gibi</w>
       <w>göndermesini</w>
+      <w>göre</w>
       <w>güle</w>
       <w>güncellendi</w>
+      <w>herhangi</w>
       <w>hesaplama</w>
       <w>hesaplanıp</w>
       <w>hoşgeldiniz</w>
       <w>indexden</w>
       <w>isim</w>
+      <w>işlem</w>
       <w>işlemi</w>
       <w>işlemler</w>
       <w>i̇sim</w>
@@ -50,7 +61,9 @@
       <w>matematiksel</w>
       <w>merhaba</w>
       <w>mesaj</w>
+      <w>odun</w>
       <w>olarak</w>
+      <w>olduğunda</w>
       <w>oluşturuldu</w>
       <w>ornek</w>
       <w>otomatik</w>
@@ -64,13 +77,18 @@
       <w>sonra</w>
       <w>stil</w>
       <w>tekrar</w>
+      <w>toplam</w>
+      <w>toplamı</w>
       <w>tutarı</w>
       <w>uygulama</w>
       <w>uzaktan</w>
+      <w>veri</w>
+      <w>yaptırabiliriz</w>
       <w>yapılabilir</w>
       <w>yapıldı</w>
       <w>yazi</w>
       <w>yazılabilir</w>
+      <w>yeni</w>
       <w>yeniden</w>
       <w>yüklenmiyor</w>
       <w>yüksek</w>

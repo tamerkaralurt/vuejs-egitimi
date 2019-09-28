@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d8bb2d7-273c-430c-9ed6-32a633e7b211" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B2/10-watchers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/uzMan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/uzMan.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/10-watchers.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2/10-watchers.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +66,8 @@
       <updated>1569669656586</updated>
       <workItem from="1569669657657" duration="14570000" />
       <workItem from="1569696956127" duration="966000" />
-      <workItem from="1569706989056" duration="1284000" />
+      <workItem from="1569706989056" duration="1356000" />
+      <workItem from="1569708356195" duration="663000" />
     </task>
     <task id="LOCAL-00001" summary="9-computed tamamlandı">
       <created>1569708257239</created>
@@ -73,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569708257239</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="10-watcher başlandı">
+      <created>1569708287345</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569708287345</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,7 +94,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -92,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="9-computed tamamlandı" />
-    <option name="LAST_COMMIT_MESSAGE" value="9-computed tamamlandı" />
+    <MESSAGE value="10-watcher başlandı" />
+    <option name="LAST_COMMIT_MESSAGE" value="10-watcher başlandı" />
   </component>
 </project>
