@@ -5,26 +5,33 @@
     <title>Title</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/css/toastr.min.css">
 </head>
 <body class="p-5">
 <div id="app">
     Form Alanı
     <hr>
-    <form action="#" method="post" @submit="kaydet">
+    <div v-if="errors.length > 0" class="alert alert-danger">
+        <p>Lütfen Form Verilerini Düzeltin</p>
+        <ul>
+            <li v-for="error in errors">{{error}}</li>
+        </ul>
+    </div>
+    <form action="#" method="post" @submit="kaydet" novalidate="true">
         <div class="form-group">
             <label for="adSoyad">Ad Soyad</label>
-            <input type="text" id="adSoyad" v-model="adSoyad" class="form-control col-4" required>
+            <input type="text" id="adSoyad" v-model="adSoyad" class="form-control col-4">
         </div>
         <div class="form-group">
-            <label for="email">Ad Soyad</label>
-            <input type="email" id="email" v-model="email" class="form-control col-4" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" v-model="email" class="form-control col-4">
         </div>
         <div class="form-group">
-            <label for="sifre">Ad Soyad</label>
+            <label for="sifre">Şifre</label>
             <input type="text" id="sifre" v-model="sifre" class="form-control col-4">
         </div>
         <div class="form-group">
-            <label for="sifre2">Ad Soyad</label>
+            <label for="sifre2">Şifre Tekrar</label>
             <input type="text" id="sifre2" v-model="sifre2" class="form-control col-4">
         </div>
         <div class="form-group">
@@ -36,13 +43,15 @@
     </form>
 </div>
 
+<script src="../assets/js/jquery-2.2.4.min.js"></script>
+<script src="../assets/js/toastr.min.js"></script><!-- Jquery3 sürümüyle çalışmadığı söylendi araştır! -->
 <script src="../assets/js/vue.js"></script>
 <script>
     const app = new Vue({
         el: '#app',
         name: 'Uzaktan Kurs',
         data: {
-            errors:[],
+            errors: [],
             adSoyad: '',
             sifre: '',
             sifre2: '',
@@ -50,13 +59,23 @@
             ilgi_alanlari: [],
         },
         methods: {
-            kaydet() {
+            kaydet(e) {
+                e.preventDefault(); //Sayfa yenilenme işlemi engellendiyor.
                 this.errors = [];
-                if(!this.adSoyad) this.errors.push('AdSoyad alanı gerekli');
-                if(!this.email) this.errors.push('Email alanı gerekli');
-                if(!this.validEmail(this.email)) this.errors.push('Email alanı geçerli değil');
-                if(!this.sifre && !this.sifre2) this.errors.push('Şifre alanı gerekli');
-                if(!this.sifre != !this.sifre2) this.errors.push('Şifre ve tekrarı aynı olmalıdır');
+                if (!this.adSoyad) this.errors.push('AdSoyad alanı gerekli');
+                if (!this.email) this.errors.push('Email alanı gerekli');
+                if (!this.validEmail(this.email)) this.errors.push('Email alanı geçerli değil');
+                if (!this.sifre && !this.sifre2) this.errors.push('Şifre alanı gerekli');
+                if (this.sifre !== this.sifre2) this.errors.push('Şifre ve tekrarı aynı olmalıdır');
+                if (this.errors.length == 0) {
+                    toastr.success('Form verileri kayıt edildi');
+                } else {
+                    let message = '';
+                    this.errors.forEach(value => {
+                       message += value + "<br>";
+                    });
+                    toastr.error(message);
+                }
             },
             validEmail: function (email) {
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

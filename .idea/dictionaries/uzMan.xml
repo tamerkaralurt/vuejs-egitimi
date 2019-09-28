@@ -27,10 +27,13 @@
       <w>değişmeyecek</w>
       <w>değiştikten</w>
       <w>doğum</w>
+      <w>düzeltin</w>
       <w>düşük</w>
+      <w>edildi</w>
       <w>eklendi</w>
       <w>eklendiğinde</w>
       <w>engelleme</w>
+      <w>engellendiyor</w>
       <w>erkek</w>
       <w>eski</w>
       <w>gelir</w>
@@ -42,6 +45,7 @@
       <w>göre</w>
       <w>güle</w>
       <w>güncellendi</w>
+      <w>hatalı</w>
       <w>herhangi</w>
       <w>hesaplama</w>
       <w>hesaplanıp</w>
@@ -63,6 +67,7 @@
       <w>karşıla</w>
       <w>kaydet</w>
       <w>kaydol</w>
+      <w>kayıt</w>
       <w>kere</w>
       <w>kodlarının</w>
       <w>komutu</w>
@@ -74,6 +79,7 @@
       <w>kullanımına</w>
       <w>kurs</w>
       <w>kısa</w>
+      <w>lütfen</w>
       <w>matematiksel</w>
       <w>merhaba</w>
       <w>mesaj</w>
@@ -101,12 +107,15 @@
       <w>teknoloji</w>
       <w>tekrar</w>
       <w>tekrarı</w>
+      <w>toastr</w>
       <w>toplam</w>
       <w>toplamı</w>
       <w>tutarı</w>
       <w>uygulama</w>
       <w>uzaktan</w>
       <w>veri</w>
+      <w>verileri</w>
+      <w>verilerini</w>
       <w>yaptırabiliriz</w>
       <w>yapılabilir</w>
       <w>yapıldı</w>
@@ -114,6 +123,7 @@
       <w>yazılabilir</w>
       <w>yeni</w>
       <w>yeniden</w>
+      <w>yenilenme</w>
       <w>yeri</w>
       <w>yüklenmiyor</w>
       <w>yüksek</w>
