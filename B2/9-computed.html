@@ -1,21 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <title>Title</title>
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../assets/css/app.css" />
-  </head>
-  <body class="p-5">
-    <div id="app"></div>
-
-    <script src="../assets/js/vue.js"></script>
-    <script>
-      const app = new Vue({
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/app.css"/>
+</head>
+<body class="p-5">
+<div id="app">
+    <input type="text" v-model="name" class="form-control"/>
+    <input type="text" v-model="surname" class="form-control"/>
+    <p>{{ name }}</p>
+    <p>{{ surname }}</p>
+    <p>{{ nameSurname2 }}</p> <!-- Bir değişken gibi çağırıp kullanabiliyoruz. -->
+    <input type="text" v-model="price" class="form-control"/>
+    <p>{{ calculateKdv }}</p> <!-- Otomatik olarak kdv hesaplama işlemi yapıldı -->
+    <hr/>
+    <p>{{nameSurname}}</p>
+    <p>{{nameSurname}}</p>
+    <p>{{nameSurname}}</p>
+    <hr>
+    <p>{{nameSurname3()}}</p> <!-- Method olarak çağırılıyor. Ancak her çalıştırıldığında tekrar hesaplanıp geliyor. -->
+    <p>{{nameSurname3()}}</p>
+    <p>{{nameSurname3()}}</p>
+    <hr>
+    <ul>
+      <li v-for="user in t_ile_baslayan_kullanicilar">
+        {{user}}
+      </li>
+    </ul>
+</div>
+<script src="../assets/js/vue.js"></script>
+<script>
+    const app = new Vue({
         el: "#app",
         name: "Uzaktan Kurs",
-        data: {}
-      });
-    </script>
-  </body>
+        data: {
+            name: "Tamer",
+            surname: "Karalürt",
+            price: 12,
+            users: ['tamer', 'seda', 'tuğba'],
+        },
+        methods: {
+            nameSurname3() {
+                console.log('Method Çalıştı');
+                return this.name + " " + this.surname;
+            },
+        },
+        computed: {
+            //Computed: Data içerisinde verileri kullanarak yeni bir değer elde etmeyi sağlar.
+            nameSurname() {
+                console.log('Computed Çalıştı');
+                return this.name + " " + this.surname;
+            },
+            calculateKdv() {
+                return (this.price * 18) / 100;
+            },
+            nameSurname2: {
+                get: function () {
+                    return this.name + " " + this.surname;
+                },
+                set: function (value) {
+                    let parse = value.split(" ");
+                    this.name = parse[0];
+                    this.surname = parse[1];
+                }
+            },
+            t_ile_baslayan_kullanicilar(){
+              //bu method ile bir dizi içinde filtreme yaparak istenilen harf ile başlayan isimleri tekrar bir dizi haline getirip döndürme işlemi yapılıyor.
+              return this.users.filter(u=>u.startsWith('t'));
+            }
+        }
+    });
+</script>
+</body>
 </html>
