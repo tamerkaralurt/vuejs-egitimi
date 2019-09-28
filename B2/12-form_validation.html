@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="p-5">
+<div id="app">
+    Form Alanı
+    <hr>
+    <form action="#" method="post" @submit="kaydet">
+        <div class="form-group">
+            <label for="adSoyad">Ad Soyad</label>
+            <input type="text" id="adSoyad" v-model="adSoyad" class="form-control col-4" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Ad Soyad</label>
+            <input type="email" id="email" v-model="email" class="form-control col-4" required>
+        </div>
+        <div class="form-group">
+            <label for="sifre">Ad Soyad</label>
+            <input type="text" id="sifre" v-model="sifre" class="form-control col-4">
+        </div>
+        <div class="form-group">
+            <label for="sifre2">Ad Soyad</label>
+            <input type="text" id="sifre2" v-model="sifre2" class="form-control col-4">
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox" v-model="ilgi_alanlari" value="1"> Teknoloji</label>
+            <label><input type="checkbox" v-model="ilgi_alanlari" value="2"> Sinema</label>
+            <label><input type="checkbox" v-model="ilgi_alanlari" value="3"> Spor</label>
+        </div>
+        <button type="submit">Kaydol</button>
+    </form>
+</div>
+
+<script src="../assets/js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        name: 'Uzaktan Kurs',
+        data: {
+            errors:[],
+            adSoyad: '',
+            sifre: '',
+            sifre2: '',
+            email: '',
+            ilgi_alanlari: [],
+        },
+        methods: {
+            kaydet() {
+                this.errors = [];
+                if(!this.adSoyad) this.errors.push('AdSoyad alanı gerekli');
+                if(!this.email) this.errors.push('Email alanı gerekli');
+                if(!this.validEmail(this.email)) this.errors.push('Email alanı geçerli değil');
+                if(!this.sifre && !this.sifre2) this.errors.push('Şifre alanı gerekli');
+                if(!this.sifre != !this.sifre2) this.errors.push('Şifre ve tekrarı aynı olmalıdır');
+            },
+            validEmail: function (email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }
+        },
+    })
+</script>
+</body>
+</html>
