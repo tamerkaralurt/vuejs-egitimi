@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instance</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body>
+<div id="app" class="p-40">
+    <p>{{ message }}</p>
+    <p v-text="message"></p>
+    <p v-text="message_html"></p>
+    <p v-html="message_html"></p>
+    <hr>
+    <div>
+        <label for="message">Mesaj</label>
+        <input type="text" id="message" v-model="message" class="form-control">
+    </div>
+    <div>
+        <label for="price">Mesaj</label>
+        <input type="text" id="price" v-model.number="price" class="form-control">
+        <p>KDV Tutarı: {{ price * 18 / 100 }}</p> <!-- Kısa matematiksel işlemler yapılabilir -->
+        <p>{{ (price * 18 / 100) < 5 ? 'KDV düşük' : 'KDV yüksek' }}</p> <!-- Kısa if koşulları yazılabilir. -->
+        <p v-once>{{ (price * 18 / 100) < 5 ? 'KDV düşük' : 'KDV yüksek' }}</p> <!-- v-once eklendiğinde bir kere değiştikten sonra bir daha değişmeyecek anlamına gelir -->
+    </div>
+    <hr>
+    <a v-bind:href="linkSite" v-bind:title="linkAciklama" target="_blank">{{ linkAciklama }}</a>
+    <br>
+    <a :href="linkSite" :title="linkAciklama" target="_blank">{{ linkAciklama }}</a> <!-- Bind Kısa Yolu -->
+    <hr>
+    <div id="id">Kurs {{id}}</div>
+    <div id="'kurs'+id">Kurs {{id}}</div>
+</div>
+<script src="../assets/js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        name: 'Uzaktan Kurs',
+        data: {
+            message: "Merhaba Vue.js",
+            message_html: 'Merhaba <b>Tamer</b>',
+            price: 12,
+            linkSite: "http://www.google.com",
+            linkAciklama: "Google Sitesine Git",
+            id: 5,
+        },
+        created() {
+            console.log('Instance Oluşturuldu');
+        },
+        mounted() {
+            console.log("DOM'a Eklendi");
+            // this.sayi = Math.floor(Math.random() * 49) + 1;
+        },
+        updated() {
+            console.log("DOM güncellendi");
+        },
+        destroyed() {
+            console.log("Instance Silindi");
+        }
+    });
+</script>
+</body>
+</html>

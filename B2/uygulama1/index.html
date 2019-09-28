@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/app.css">
+</head>
+<body class="p-5">
+<div id="app">
+    <button class="btn btn-info float-right" @click="newUser">New User</button>
+
+    <!-- Model -->
+    <div class="modal fade" id="newUserModel" tabindex="-1" role="dialog" aria-labelledby="newUserModelLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New User</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form" @submit.prevent = "true">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Name" v-model="user.name">
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select id="role" class="form-control" v-model="user.role">
+                                <option value="">Seçiniz</option>
+                                <option>Admin</option>
+                                <option>User</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" @click="addUser">Add User</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #Model -->
+
+    <h1>Users ({{users.length}} user)</h1>
+    <hr>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>ROLE</th>
+            <th>Operations</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(user,index) in users">
+            <td>{{index}}</td>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.role}}</td>
+            <td>
+                <a href="javascript:" class="btn btn-warning btn-sm" @click="editUser(index)"><i class="fa fa-edit"></i></a>
+                <button class="btn btn-danger btn-sm" @click="deleteUserIndex(index)" title="index"><i class="fa fa-trash"></i></button>
+                <button class="btn btn-danger btn-sm" @click="deleteUserId(user.id)" title="id"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../../assets/js/vue.js"></script>
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
