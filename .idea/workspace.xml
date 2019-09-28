@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d8bb2d7-273c-430c-9ed6-32a633e7b211" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B2/11-forms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/uzMan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/uzMan.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/11-forms.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2/11-forms.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +67,7 @@
       <workItem from="1569669657657" duration="14570000" />
       <workItem from="1569696956127" duration="966000" />
       <workItem from="1569706989056" duration="1356000" />
-      <workItem from="1569708356195" duration="699000" />
+      <workItem from="1569708356195" duration="2296000" />
     </task>
     <task id="LOCAL-00001" summary="9-computed tamamlandı">
       <created>1569708257239</created>
@@ -88,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569709039256</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="11-forms başlandı">
+      <created>1569709067879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569709067879</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +120,7 @@
     <MESSAGE value="9-computed tamamlandı" />
     <MESSAGE value="10-watcher başlandı" />
     <MESSAGE value="10-watchers tamamlandı" />
-    <option name="LAST_COMMIT_MESSAGE" value="10-watchers tamamlandı" />
+    <MESSAGE value="11-forms başlandı" />
+    <option name="LAST_COMMIT_MESSAGE" value="11-forms başlandı" />
   </component>
 </project>

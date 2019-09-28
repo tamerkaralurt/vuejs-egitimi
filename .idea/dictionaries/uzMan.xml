@@ -2,10 +2,13 @@
   <dictionary name="uzMan">
     <words>
       <w>aciklama</w>
+      <w>adres</w>
+      <w>adınız</w>
       <w>alanında</w>
       <w>ancak</w>
       <w>anlamına</w>
       <w>arttıran</w>
+      <w>askerlik</w>
       <w>basarili</w>
       <w>başlayarak</w>
       <w>beyaz</w>
@@ -19,10 +22,12 @@
       <w>değişken</w>
       <w>değişmeyecek</w>
       <w>değiştikten</w>
+      <w>doğum</w>
       <w>düşük</w>
       <w>eklendi</w>
       <w>eklendiğinde</w>
       <w>engelleme</w>
+      <w>erkek</w>
       <w>eski</w>
       <w>gelir</w>
       <w>geliyor</w>
@@ -41,7 +46,10 @@
       <w>işlemi</w>
       <w>işlemler</w>
       <w>i̇sim</w>
+      <w>i̇stanbul</w>
+      <w>i̇zmir</w>
       <w>kadar</w>
+      <w>kadın</w>
       <w>kaldırıldı</w>
       <w>karakter</w>
       <w>karsila</w>
@@ -61,6 +69,7 @@
       <w>matematiksel</w>
       <w>merhaba</w>
       <w>mesaj</w>
+      <w>moderatör</w>
       <w>odun</w>
       <w>olarak</w>
       <w>olduğunda</w>
@@ -90,6 +99,7 @@
       <w>yazılabilir</w>
       <w>yeni</w>
       <w>yeniden</w>
+      <w>yeri</w>
       <w>yüklenmiyor</w>
       <w>yüksek</w>
       <w>çalıştırıldığında</w>

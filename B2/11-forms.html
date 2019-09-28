@@ -8,7 +8,37 @@
 </head>
 <body class="p-5">
 <div id="app">
-
+    <form>
+        <label>Adınız</label>
+        <input type="text" v-model="user.name" class="form-control col-4"><!-- input bind -->
+        <br>
+        <label>Adres</label>
+        <textarea v-model="user.address" class="form-control col-4"></textarea><!-- Textarea bind -->
+        <hr>
+        <label><input type="checkbox" v-model="user.isActive"> Aktif mi?</label>
+        <pre class="form-text text-muted">{{user.isActive}}</pre>
+        <br>
+        <label><input type="checkbox" v-model="user.selectedRoles" value="admin"> Admin</label>
+        <label><input type="checkbox" v-model="user.selectedRoles" value="moderator"> Moderatör</label>
+        <label><input type="checkbox" v-model="user.selectedRoles" value="user"> User</label>
+        <select v-model="user.selectedRoles" class="form-control col-4" multiple>
+            <option value="admin">Admin</option>
+            <option value="moderator">Moderatör</option>
+            <option value="user">User</option>
+        </select>
+        <pre class="form-text text-muted">{{user.selectedRoles}}</pre>
+        <hr>
+        <label><input type="radio" v-model="user.gender" value="E">Erkek</label>
+        <label><input type="radio" v-model="user.gender" value="K">Kadın</label>
+        <pre class="form-text text-muted">{{user.gender}}</pre>
+        <hr>
+        <label>Doğum Yeri</label>
+        <select v-model="user.birthPlace" class="form-control col-4">
+            <option value="">Seçiniz</option>
+            <option v-for="city in cities" :value="city.value">{{city.text}}</option>
+        </select>
+        <pre class="form-text text-muted">{{user.birthPlace}}</pre>
+    </form>
 </div>
 
 <script src="../assets/js/vue.js"></script>
@@ -16,7 +46,22 @@
     const app = new Vue({
         el: '#app',
         name: 'Uzaktan Kurs',
-        data: {}
+        data: {
+            user: {
+                name: 'Tamer',
+                address: 'Adana',
+                isActive: false,
+                selectedRoles: [],
+                gender: 'E',
+                birthPlace: 1,
+            },
+            cities: [
+                {text: 'Adana', value: 1},
+                {text: 'Ankara', value: 6},
+                {text: 'İstanbul', value: 34},
+                {text: 'İzmir', value: 35},
+            ],
+        }
     })
 </script>
 </body>
