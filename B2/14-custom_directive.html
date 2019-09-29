@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="p-5">
+<div id="app">
+    <!-- v-for v-if gibi vue ile gelen directives gibi bizde kendi directive metodlarımızı yazabiliriz. -->
+    <div v-alert="'success'">{{title}}</div>
+    <div v-bg="{type: 'warning'}" class="p-2 mb-4 text-white">{{title}}</div>
+    <input type="text" v-model="tarihSaat" class="form-control">
+    <input type="text" v-model="tarihSaat" v-datetime:date="tarihSaat" class="form-control">
+    <input type="text" v-model="tarihSaat" v-datetime:time="tarihSaat" class="form-control">
+</div>
+
+<script src="../assets/js/vue.js"></script>
+<script>
+    //Global olarak directive oluşturma işlemi yapıldı.
+    Vue.directive('datetime',function (el, binding) {
+        if (binding.arg === 'date')
+            el.value = new Date(binding.value).toLocaleDateString();
+        else
+            el.value = new Date(binding.value).toLocaleTimeString();
+    });
+    const app = new Vue({
+        el: '#app',
+        name: 'Uzaktan Kurs',
+        data: {
+            title: 'Studere una ducunt ad altus elogium.',
+            tarihSaat: '2019-09-29 03:33:00',
+        },
+        directives:{
+            //el: uyguladığımız tag değeri (div,p). binding: tırnak içinde gönderdiğimiz değerin kendisi.
+            alert: function (el, binding) {
+                el.setAttribute('class', 'alert alert-' + binding.value);
+            },
+            //object olarak gönderilen ve var olan classlarına ek yapabildiğimiz yapı.
+            bg: function (el, binding) {
+                el.setAttribute('class', el.getAttribute('class') + ' bg-' + binding.value.type);
+            },
+        }
+    })
+</script>
+</body>
+</html>
