@@ -1,6 +1,6 @@
 <template>
   <div class="alert alert-success">
-    <button @click="count">{{ count }} kez tıklandı</button>
+    <button @click="count++">{{ count }} kez tıklandı</button>
   </div>
 </template>
 
