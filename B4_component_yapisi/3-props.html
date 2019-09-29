@@ -8,20 +8,44 @@
 </head>
 <body class="p-5">
 <div id="app">
+    <!-- Tanımlanan probslara veri gönderilme işlemi -->
     <card header="Üye Girişi" body="Kullanıcı Adı Şifre" footer="Giriş Yap"></card>
+    <br>
+    <card header="Üye Girişi" :body="bodyContent" :footer="footerButton"></card>
+    <br>
+    <card2 header="Üye Girişi" :body="bodyContent" footer-button-text="GirişYap"></card2>
 </div>
 
 <script src="../assets/js/vue.js"></script>
 <script>
     //props tanımladıktan sonra slot kullanmana gerek kalmıyor.
     Vue.component('Card', {
-        props: ['header', 'body', 'footer'],
-        template: `<div class="card"><div class="card-header">{{header}}</div><div class="card-body">{{body}}</div><div class="card-footer">{{footer}}</div></div>`,
+        props: ['header', 'body', 'footer', 'footerButtonText'],
+        template:
+            `<div class="card">
+                <div class="card-header">{{header}}</div>
+                <div class="card-body">{{body}}</div>
+                <div class="card-footer" v-html="footer"></div>
+            </div>`,
+    });
+    Vue.component('Card2', {
+        props: ['header', 'body', 'footer', 'footerButtonText'],
+        template:
+            `<div class="card">
+                <div class="card-header">{{header}}</div>
+                <div class="card-body">{{body}}</div>
+                <div class="card-footer">
+                    <button class="btn btn-sm btn-primary">{{footerButtonText}}</button>
+                </div>
+            </div>`,
     });
     const app = new Vue({
         el: '#app',
         name: 'Uzaktan Kurs',
-        data: {}
+        data: {
+            footerButton:`<button class="btn btn-sm btn-primary">Giriş Yap</button>`,
+            bodyContent:"Kullanıcı Adı Şifre Prob",
+        }
     })
 </script>
 </body>
