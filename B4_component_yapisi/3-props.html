@@ -8,11 +8,16 @@
 </head>
 <body class="p-5">
 <div id="app">
-
+    <card header="Üye Girişi" body="Kullanıcı Adı Şifre" footer="Giriş Yap"></card>
 </div>
 
 <script src="../assets/js/vue.js"></script>
 <script>
+    //props tanımladıktan sonra slot kullanmana gerek kalmıyor.
+    Vue.component('Card', {
+        props: ['header', 'body', 'footer'],
+        template: `<div class="card"><div class="card-header">{{header}}</div><div class="card-body">{{body}}</div><div class="card-footer">{{footer}}</div></div>`,
+    });
     const app = new Vue({
         el: '#app',
         name: 'Uzaktan Kurs',
