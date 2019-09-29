@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d8bb2d7-273c-430c-9ed6-32a633e7b211" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B2/14-custom_directive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/uzMan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/uzMan.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B2/proje_todo_list/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B2/proje_todo_list/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B2/proje_todo_list/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B2/proje_todo_list/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +31,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RSo3ADTtiuUufNa09zgxmLwWHg" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="PluginDummyText.Genre" value="latin" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/B2/proje_todo_list" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -41,6 +48,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\uzMan\Desktop\CalismaKlasoru\Dersler\B2\proje_todo_list" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -67,7 +79,7 @@
       <workItem from="1569669657657" duration="14570000" />
       <workItem from="1569696956127" duration="966000" />
       <workItem from="1569706989056" duration="1356000" />
-      <workItem from="1569708356195" duration="7914000" />
+      <workItem from="1569708356195" duration="13137000" />
     </task>
     <task id="LOCAL-00001" summary="9-computed tamamlandı">
       <created>1569708257239</created>
@@ -132,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569716538759</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="13-filters tamamlandı">
+      <created>1569717485628</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1569717485628</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +171,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="9-computed tamamlandı" />
     <MESSAGE value="10-watcher başlandı" />
     <MESSAGE value="10-watchers tamamlandı" />
@@ -161,6 +181,7 @@
     <MESSAGE value="11-form_validation tamamlandı" />
     <MESSAGE value="13-filters başladı" />
     <MESSAGE value="13-filters bitti" />
-    <option name="LAST_COMMIT_MESSAGE" value="13-filters bitti" />
+    <MESSAGE value="13-filters tamamlandı" />
+    <option name="LAST_COMMIT_MESSAGE" value="13-filters tamamlandı" />
   </component>
 </project>
