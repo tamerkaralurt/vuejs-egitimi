@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d8bb2d7-273c-430c-9ed6-32a633e7b211" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +36,7 @@
     <property name="PluginDummyText.Genre" value="latin" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/B2/proje_todo_list" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -76,7 +76,7 @@
       <workItem from="1569696956127" duration="966000" />
       <workItem from="1569706989056" duration="1356000" />
       <workItem from="1569708356195" duration="17661000" />
-      <workItem from="1569727230176" duration="1355000" />
+      <workItem from="1569727230176" duration="1651000" />
     </task>
     <task id="LOCAL-00001" summary="9-computed tamamlandı">
       <created>1569708257239</created>
@@ -176,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569728405420</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="style üzerinde scoped kullanımı öğrenildi">
+      <created>1569728852177</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1569728852177</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +218,7 @@
     <MESSAGE value="ödev tamamlandı" />
     <MESSAGE value="vue-cli kuruldu ve ilk proje oluşturuldu" />
     <MESSAGE value="global ve local component yapısı öğrenildi" />
-    <option name="LAST_COMMIT_MESSAGE" value="global ve local component yapısı öğrenildi" />
+    <MESSAGE value="style üzerinde scoped kullanımı öğrenildi" />
+    <option name="LAST_COMMIT_MESSAGE" value="style üzerinde scoped kullanımı öğrenildi" />
   </component>
 </project>
