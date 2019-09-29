@@ -16,6 +16,7 @@ export default {
 }
 </script>
 
+<!-- scoped: style üzerine attr olarak eklenirse style kodları local, eklenmese style kodları global olmaktadır. -->
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

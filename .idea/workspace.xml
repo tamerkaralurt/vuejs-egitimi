@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d8bb2d7-273c-430c-9ed6-32a633e7b211" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B4_component_yapisi/1-global-local.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/src/App.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +76,7 @@
       <workItem from="1569696956127" duration="966000" />
       <workItem from="1569706989056" duration="1356000" />
       <workItem from="1569708356195" duration="17661000" />
-      <workItem from="1569727230176" duration="1110000" />
+      <workItem from="1569727230176" duration="1355000" />
     </task>
     <task id="LOCAL-00001" summary="9-computed tamamlandı">
       <created>1569708257239</created>
@@ -170,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569727445352</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="global ve local component yapısı öğrenildi">
+      <created>1569728405420</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1569728405420</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +210,7 @@
     <MESSAGE value="proje todo list eklendi." />
     <MESSAGE value="ödev tamamlandı" />
     <MESSAGE value="vue-cli kuruldu ve ilk proje oluşturuldu" />
-    <option name="LAST_COMMIT_MESSAGE" value="vue-cli kuruldu ve ilk proje oluşturuldu" />
+    <MESSAGE value="global ve local component yapısı öğrenildi" />
+    <option name="LAST_COMMIT_MESSAGE" value="global ve local component yapısı öğrenildi" />
   </component>
 </project>
