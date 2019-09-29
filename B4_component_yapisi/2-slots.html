@@ -13,6 +13,24 @@
     <alert>Merhaba</alert>
     <alert>Nasılsın</alert>
     <alert></alert>
+    <hr>
+    <card>Tamer</card>
+    <br>
+    <card></card>
+    <br>
+    <!-- component içine iki veya daha fazla değer göndermek istendiğinde -->
+    <card-with-header>
+        <template slot="header">Üye Girişi</template>
+        <form class="form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" class="form-control">
+            </div>
+        </form>
+        <template slot="footer">
+            <button class="btn btn-sm btn-primary">Giriş Yap</button>
+        </template>
+    </card-with-header>
 </div>
 
 <script src="../assets/js/vue.js"></script>
@@ -22,6 +40,36 @@
             <slot>Default Değer</slot>
         </div>`,
     });
+
+    Vue.component('Card', {
+        template:
+            `<div class="card">
+                <div class="card-body">
+                    <div class="card-text">
+                        <slot>Merhaba</slot>
+                    </div>
+                </div>
+            </div>`,
+    });
+
+    Vue.component('CardWithHeader', {
+        template:
+            `<div class="card">
+                <div class="card-header">
+                    <slot name="header">Default Başlık</slot>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+                        <slot>Default Body</slot>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <slot name="footer">Default Footer</slot>
+                </div>
+            </div>`,
+    });
+
+
     const app = new Vue({
         el: '#app',
         name: 'Uzaktan Kurs',
