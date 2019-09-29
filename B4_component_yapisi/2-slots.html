@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="p-5">
+<div id="app">
+    <!-- Bir component bloğu içerisinde bir içerik kullanmak istediğimiz durumda stot etiketinden faydalanıyoruz. -->
+    <!-- Component içine ne yazılırsa, slot ile tanımlanmış yere girilen metin entegre ediliyor -->
+    <alert>Merhaba</alert>
+    <alert>Nasılsın</alert>
+    <alert></alert>
+</div>
+
+<script src="../assets/js/vue.js"></script>
+<script>
+    Vue.component('Alert', {
+        template: `<div class="alert alert-success">
+            <slot>Default Değer</slot>
+        </div>`,
+    });
+    const app = new Vue({
+        el: '#app',
+        name: 'Uzaktan Kurs',
+        data: {}
+    })
+</script>
+</body>
+</html>
