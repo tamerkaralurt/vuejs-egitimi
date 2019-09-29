@@ -2,9 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d8bb2d7-273c-430c-9ed6-32a633e7b211" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/B2/odev/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B2/odev/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/B3_vue_cli_ile_calismak/cli-proje2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/1-instance.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/1-instance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/10-watchers.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/10-watchers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/11-forms.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/11-forms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/12-form_validation.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/12-form_validation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/13-filters.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/13-filters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/14-custom_directive.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/14-custom_directive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/2-lifecycle.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/2-lifecycle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/3-databinding.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/3-databinding.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/4-attributebinding.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/4-attributebinding.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/5-stylebinding.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/5-stylebinding.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/6-listmodel.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/6-listmodel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/7-events.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/7-events.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/8-conditionals.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/8-conditionals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/9-computed.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/9-computed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/odev/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/odev/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/odev/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/odev/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/proje_todo_list/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/proje_todo_list/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/proje_todo_list/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/proje_todo_list/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/proje_todo_list/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/proje_todo_list/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/proje_todo_list/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/proje_todo_list/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/uygulama1/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/uygulama1/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2/uygulama1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2_temel_yapilar/uygulama1/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +64,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RSo3ADTtiuUufNa09zgxmLwWHg" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
@@ -45,7 +80,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -77,7 +112,7 @@
       <workItem from="1569669657657" duration="14570000" />
       <workItem from="1569696956127" duration="966000" />
       <workItem from="1569706989056" duration="1356000" />
-      <workItem from="1569708356195" duration="16538000" />
+      <workItem from="1569708356195" duration="17661000" />
     </task>
     <task id="LOCAL-00001" summary="9-computed tamamlandı">
       <created>1569708257239</created>
@@ -156,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569722707253</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ödev tamamlandı">
+      <created>1569726169627</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1569726169627</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +230,7 @@
     <MESSAGE value="13-filters bitti" />
     <MESSAGE value="13-filters tamamlandı" />
     <MESSAGE value="proje todo list eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="proje todo list eklendi." />
+    <MESSAGE value="ödev tamamlandı" />
+    <option name="LAST_COMMIT_MESSAGE" value="ödev tamamlandı" />
   </component>
 </project>
