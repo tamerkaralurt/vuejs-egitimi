@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="p-5">
+<div id="app">
+    <div class="row">
+        <card-item :item="sampleItem"></card-item>
+    </div>
+    <modal></modal>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/vue.js"></script>
+<script>
+    Vue.component('CardItem', {
+        props: {
+            item: {required: true, default: {}},
+        },
+        template:
+            `<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card">
+                    <img :src="item.imageUrl" alt="Card Image Cap" style="height: 200px;" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <h3 class="card-title" v-text="item.title"></h3>
+                        <p class="card-text" v-text="item.description"></p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-sm btn-primary" @click="showDetail">Detay</button>
+                    </div>
+                </div>
+            </div>`,
+        methods: {
+            showDetail() {
+                $('#itemModalDetail').modal('show');
+            },
+        },
+    });
+    Vue.component('Modal', {
+        props: {
+            title: {required: false, default: 'Modal Title'},
+            body: {required: false, default: 'Modal Body'},
+        },
+        template:
+            `<div class="modal fade" id="itemModalDetail" tabindex="-1" role="dialog" aria-labelledby="itemModalDetailLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="itemModalDetailLabel">{{title}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" v-html="body"></div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                  </div>
+                </div>
+              </div>
+            </div>`,
+        created() {
+        },
+    });
+    const app = new Vue({
+        el: '#app',
+        name: 'Uzaktan Kurs',
+        data: {
+            sampleItem:{
+                imageUrl: '../assets/img/pic2.jpg',
+                title: 'Sample Title',
+                description: 'Cur nix messis? When the space suit goes for astral city, all processors accelerate fantastic, modern ferengis.',
+                detail: 'The history is an intelligent vogon. Wench of a dead punishment, haul the strength! All great individuals absorb each other, only sincere masters have a mineral.'
+            },
+        },
+    })
+</script>
+</body>
+</html>
