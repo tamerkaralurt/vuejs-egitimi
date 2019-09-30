@@ -12,11 +12,14 @@
         <card-item :item="sampleItem"></card-item>
     </div>
     <modal></modal>
+    <card-list :title="'Kurslar'" :cards="sampleItems"></card-list>
 </div>
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
 <script src="../assets/js/vue.js"></script>
 <script>
+    window.EventBus = new Vue();
+
     Vue.component('CardItem', {
         props: {
             item: {required: true, default: {}},
@@ -37,6 +40,8 @@
         methods: {
             showDetail() {
                 $('#itemModalDetail').modal('show');
+                //Herhangi bir olay gerçekleştiği anda devreye almak istediğimiz olayın tanımlandığı yerdir.
+                window.EventBus.$emit('showDetailInModal', this.item);
             },
         },
     });
@@ -63,18 +68,67 @@
               </div>
             </div>`,
         created() {
+            //ShowDetailInModel olayını $on ile dinlemeye alıyoruz. Global Bir Olay Olarak Tanımlandı.
+            //$on: Emit ile gönderdiğimiz bir olayın gerçekleşmesi durumunda çalışmasını istediğimiz kodların tanımlandığı yerdir.
+            window.EventBus.$on('showDetailInModal', (item) => {
+               this.title = item.title;
+               this.body = item.detail;
+            });
         },
+    });
+    Vue.component('CardList',{
+        props:{
+            title:{type: String, required: false, default: 'Card List'},
+            cards:{type: Array, required: true, default:[]},
+        },
+        template:
+            `<div class="card-list">
+                <h2>{{title}}</h2>
+                <div class="row">
+                    <card-item :item="card" v-for="(card, index) in cards" :key="card.title"></card-item>
+                </div>
+            </div>`,
     });
     const app = new Vue({
         el: '#app',
         name: 'Uzaktan Kurs',
         data: {
-            sampleItem:{
+            sampleItem: {
                 imageUrl: '../assets/img/pic2.jpg',
                 title: 'Sample Title',
                 description: 'Cur nix messis? When the space suit goes for astral city, all processors accelerate fantastic, modern ferengis.',
                 detail: 'The history is an intelligent vogon. Wench of a dead punishment, haul the strength! All great individuals absorb each other, only sincere masters have a mineral.'
             },
+            sampleItems:[
+                {
+                    title: 'Javascript Kursu',
+                    description: 'JavaScript ile web uygulamaları yapın',
+                    detail: 'Javascipt ile web uygulamarı yapın <br><b>Fiyatı: </b>29',
+                    price: 29,
+                    imageUrl: '../assets/img/coverJS101.jpg'
+                },
+                {
+                    title: 'Vue.JS Kursu',
+                    description: 'VueJS ile web uygulamaları yapın',
+                    detail: 'VueJS ile web uygulamarı yapın <br><b>Fiyatı: </b>39',
+                    price: 39,
+                    imageUrl: '../assets/img/coverVUE101.jpg'
+                },
+                {
+                    title: 'Laravel Kursu',
+                    description: 'Laravel ile web uygulamaları yapın',
+                    detail: 'Laravel ile web uygulamarı yapın <br><b>Fiyatı: </b>59',
+                    price: 59,
+                    imageUrl: '../assets/img/coverLRV101.jpg'
+                },
+                {
+                    title: 'Ionic ile Mobil Uygulama Geliştirme Kursu',
+                    description: 'Ionic ile mobil uygulama geliştirin.',
+                    detail: 'Ionic ile mobil uygulama geliştirin.<br><b>Fiyatı: </b>59',
+                    price: 59,
+                    imageUrl: '../assets/img/coverIONIC.jpg'
+                },
+            ],
         },
     })
 </script>
