@@ -10,14 +10,21 @@
 <div id="app">
 
 </div>
-
 <script src="../assets/js/vue.js"></script>
+<!-- Bazen komponentlerimizi oluştururken template bloğunu, component tanımı içerisinde kullanmak yerine doğrudan kullandığımız yerde tanımlayabiliriz. -->
 <script>
+    Vue.component('CourseProgress', {
+        data() {
+            return {
+                degree: 75,
+            };
+        },
+    });
     const app = new Vue({
         el: '#app',
         name: 'Uzaktan Kurs',
-        data: {}
-    })
+        data: {},
+    });
 </script>
 </body>
 </html>
