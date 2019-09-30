@@ -8,7 +8,18 @@
 </head>
 <body class="p-5">
 <div id="app">
-
+    <course-progress inline-template>
+        <div>
+            <div class="progress">
+                <div class="progress-bar" :style="{width: degree + '%'}">
+                    {{ degree }}
+                </div>
+            </div>
+            <hr>
+            <button class="btn btn-primary" @click="degree += 5">Increment</button>
+            <button class="btn btn-primary" @click="degree -= 5">Decrement</button>
+        </div>
+    </course-progress>
 </div>
 <script src="../assets/js/vue.js"></script>
 <!-- Bazen komponentlerimizi oluştururken template bloğunu, component tanımı içerisinde kullanmak yerine doğrudan kullandığımız yerde tanımlayabiliriz. -->
