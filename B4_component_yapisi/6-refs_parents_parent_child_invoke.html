@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="p-5">
+<div id="app">
+<parent></parent>
+</div>
+<script src="../assets/js/vue.js"></script>
+<script>
+    Vue.component('Parent',{
+        template:
+            `<div class="card text-white bg-secondary mb-3">
+                <div class="card-header">Parent</div>
+                <div class="card-body">
+                    <button class="btn btn-danger btn-sm" @click="callChildMethod">Call Child Method</button>
+                    <child ref="child1"></child>
+                </div>
+            </div>`,
+        methods: {
+            callChildMethod(){
+                //çocuk alanlara referans atayarak $refs ile çocuk componentlerin tüm özelliklerine erişebiliyoruz. "child1" ref olarak verdiğim bir ad, istediğimiz adı verebiliriz.
+                this.$refs.child1.childMethod();
+            }
+        }
+    });
+    Vue.component('Child',{
+        template:
+            `<div class="card text-white bg-success mb-3">
+                <div class="card-header">Child</div>
+                <div class="card-body">
+
+                </div>
+            </div>`,
+        methods:{
+            childMethod(){
+                console.log('Child Metod Called');
+            }
+        }
+    });
+    const app = new Vue({
+        el: '#app',
+        name: 'Uzaktan Kurs',
+        data: {}
+    })
+</script>
+</body>
+</html>
