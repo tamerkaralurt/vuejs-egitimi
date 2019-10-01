@@ -81,20 +81,44 @@
             </div>`,
     };
     const Page_Urun_Detay = {
-        template: '<h1>Ürün {{$route.params.id}} Detayı</h1>',
+        template:
+            `<div>
+                <a href="#" class="btn btn-sm btn-primary float-right" @click="geriDon">Geri Dön</a>
+                <a href="#" class="btn btn-sm btn-primary float-right mr-1" @click="anaSayfayaDon">Anasayfa Dön</a>
+                <h1>Ürün {{$route.params.id}} Detayı</h1>
+            </div>`,
+        methods: {
+            geriDon() {
+                //-1 dersen 1 önceki sayfaya -2 dersen 2 önceki sayfaya yönlendirme yapabilirsin. İsteğe göre sayı arttırılabilir.
+                this.$router.go(-1);
+            },
+            anaSayfayaDon() {
+                //push: adres satırında doğrudan açılmasını istediğimiz adresi yazabiliriz. "/hakkimizda" gibi.
+                // this.$router.push('/');
+                //direk olarak isime göre çağırılıp, parametre yollanmak istiyorsa parametreli yollama işlemi yapılabilir.
+                this.$router.push({name: 'anasayfa'});
+                // this.$router.push({name: 'urun-detay', params: {id: 2}});
+            },
+        },
     };
     const Page_Iletisim = {
         template: '<h1>İletişim</h1>',
     };
     // parametreli link yapılarını oluşturmak için :id gibi değer verilebilir
     const routes = [
-        {path: '/', component: Page_Anasayfa},
+        {path: '/', component: Page_Anasayfa, name: 'anasayfa'},
         {path: '/hakkimizda', component: Page_Hakkimizda},
         {path: '/urunler', component: Page_Urunler},
         {path: '/urunler/detay/:id', component: Page_Urun_Detay, name: 'urun-detay'},
         {path: '/iletisim', component: Page_Iletisim},
     ];
-    const router = new VueRouter({routes: routes,});
+    const router = new VueRouter({
+        routes: routes,
+        //mode: history => "/hakkimizda", mode: hash => "#/hakkimizda" olur. Default olarak hash tanımlıdır.
+        //history modunda dosya üzerinden html kodlarını açar gibi direk olarak browser üzerinde test işlemi yürütemezsiniz.
+        //hash modunda olduğunda dosya üzerinden direk olarak açık test işlemi yapabilirsiniz.
+        mode: 'hash',
+    });
     const app = new Vue({
         router: router,
         el: '#app',
