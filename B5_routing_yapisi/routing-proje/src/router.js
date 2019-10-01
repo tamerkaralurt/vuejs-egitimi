@@ -3,12 +3,14 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import ContactUs from './views/ContactUs.vue'
 import NotFound from './views/NotFound.vue'
+import Photos from './views/Photos.vue'
 
 //Vue.js nin routeri kullanabilmesi için bu tanımlamayı yapmamız gerekmektedir.
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
+    //mode:"hash" iken link üzerinde bir değişiklik olduğunda sayfada bir düzenleme olmuyor. Bunu watch ile çözebiliyoruz. Ancak mode:"history" moddayken bunu sistem otomatik algılayıp sayfayı yeniliyor.
+    mode: 'hash',
     base: process.env.BASE_URL,
     routes: [
         {
@@ -26,6 +28,11 @@ export default new Router({
             path: '/contactus',
             name: 'contactus',
             component: ContactUs
+        },
+        {
+            path: '/photos/:id',
+            name: 'photos',
+            component: Photos
         },
         //Bu yapı ile üstte tanımladığımız adreslerden farklı bir adres geldiğinde, bizim belirlediğimiz componenti veya direk sayfa yönlendirmesi yaparak hatalı link yakalama işlemi yapabiliriz.
         {
