@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <!--<style>
+        .router-link-active{
+            background-color: red;
+            color: black !important;,ü
+        }
+    </style>-->
+</head>
+<body>
+<div id="app">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <router-link :to="{ name: 'anasayfa' }" class="navbar-brand">Routing App</router-link>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <!-- Router Mode: hash ise href="#/hakkimizda" şeklinde, history ise href="/hakkimizda" şeklinde kullanabiliriz. -->
+                    <!-- <a class="nav-link" href="#/hakkimizda">Hakkımızda</a> şeklinde de kullabilir. -->
+                    <!-- active sayfa özelliği için "router-link-exact-active router-link-active" claslarını kullanılabilir. -->
+                    <!-- bootstrap gibi hazır style templateleri kullanıyorsan "router-link-active" css classı yerine senin belirlediğin bir style classını uygulatabilirsin. "active-class='active'" gibi. -->
+                    <li class="nav-item">
+                        <!-- Exact: normalde "/hakkimizda" gibi bir yapı olduğundan / işaretini de active olarak algılayıp aktif link olarak işaretliyorken, exact eklendiğinde bu sorun ortadan kalkıyor. -->
+                        <router-link to="/" class="nav-link" active-class="active" exact>Anasayfa</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link to="/hakkimizda" class="nav-link" active-class="active">Hakkımızda</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link to="/aboutus" class="nav-link" active-class="active">About Us</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link :to="urunlerLink" class="nav-link" active-class="active">Ürünler</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <!-- tag: ile default olarak router-link a tagı üzerine render ederken, istediğimiz bir html tagını belirleyebiliriz. Örnek olarak button verildi. -->
+                        <router-link :to="{ path: 'iletisim' }" class="nav-link btn btn-outline-success btn-sm" tag="button" active-class="active">İletişim</router-link>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <!-- router-view ile sayfa içerikleri otomatik olarak buraya yüklenecektir. -->
+        <router-view></router-view>
+    </div>
+</div>
+<script src="../assets/js/vue.js"></script>
+<script src="../assets/js/vue-router.js"></script>
+<script>
+    const Page_Anasayfa = {
+        template: '<h1>Hoşgeldiniz</h1>',
+    };
+    const Page_Hakkimizda = {
+        template:
+            `<div class="row">
+                <div class="col-9">
+                    <h1>Hakkımızda</h1>
+                    <router-view></router-view>
+                </div>
+                <div class="col-3">
+                    <div class="list-group">
+                        <router-link to="/hakkimizda/giris" class="list-group-item">Giriş</router-link>
+                        <router-link :to="{ name:'hakkimizda-sayfa1' }" class="list-group-item">Sayfa 1</router-link>
+                        <router-link :to="{ name:'hakkimizda-sayfa2' }" class="list-group-item">Sayfa 2</router-link>
+                    </div>
+                </div>
+            </div>`,
+    };
+    const Page_Urunler = {
+        template:
+            `<div>
+                <h1>Ürünler</h1>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">Ürün 1</div>
+                                <div class="card-test">Ürün Açıklama</div>
+                                <router-link :to="{ name:'urun-detay', params:{ id:1, } }" class="btn btn-primary">Detay</router-link>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">Ürün 2</div>
+                                <div class="card-test">Ürün Açıklama</div>
+                                <router-link :to="{ name:'urun-detay', params:{ id:2, } }" class="btn btn-primary">Detay</router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`,
+    };
+    const Page_Urun_Detay = {
+        template:
+            `<div>
+                <a href="#" class="btn btn-sm btn-primary float-right" @click="geriDon">Geri Dön</a>
+                <a href="#" class="btn btn-sm btn-primary float-right mr-1" @click="anaSayfayaDon">Anasayfa Dön</a>
+                <h1>Ürün {{$route.params.id}} Detayı</h1>
+            </div>`,
+        methods: {
+            geriDon() {
+                //-1 dersen 1 önceki sayfaya -2 dersen 2 önceki sayfaya yönlendirme yapabilirsin. İsteğe göre sayı arttırılabilir.
+                this.$router.go(-1);
+            },
+            anaSayfayaDon() {
+                //push: adres satırında doğrudan açılmasını istediğimiz adresi yazabiliriz. "/hakkimizda" gibi.
+                // this.$router.push('/');
+                //direk olarak isime göre çağırılıp, parametre yollanmak istiyorsa parametreli yollama işlemi yapılabilir.
+                this.$router.push({name: 'anasayfa'});
+                // this.$router.push({name: 'urun-detay', params: {id: 2}});
+            },
+        },
+    };
+    const Page_Iletisim = {
+        template: '<h1>İletişim</h1>',
+    };
+    const Page_Hakkimizda_Giris = {
+        template: `<div class="jumbotron"><h1>Page Hakkimizda Giris</h1></div>`,
+    };
+    const Page_Hakkimizda_Sayfa1 = {
+        template: `<div class="jumbotron"><h1>Page Hakkimizda Sayfa1</h1></div>`,
+    };
+    const Page_Hakkimizda_Sayfa2 = {
+        template: `<div class="jumbotron"><h1>Page Hakkimizda Sayfa2</h1></div>`,
+    };
+    // parametreli link yapılarını oluşturmak için :id gibi değer verilebilir
+    const routes = [
+        //Redirect: redirect ile istenilen adres istediğini başka bir adrese yönlendirme işlemi yapılabilir.
+        //Alias: Bir adrese farlşı path tanımları ile erişmek için kullanıyor. Yani ikinci bir route adresi gibi algılanabilir.
+        {
+            path: '/',
+            component: Page_Anasayfa, name: 'anasayfa',
+            //redirect: '/iletisim',
+            //redirect: { name:'iletisim' }
+        },
+        {
+            path: '/hakkimizda',
+            component: Page_Hakkimizda,
+            //Alias tanımlama
+            alias: '/aboutus',
+            //Alt route tanımlamarı
+            // "hakkimizda/giris"
+            children:[
+                //path içini boş bıraktığında direk hakkimizda görüntüleniyor.
+                { path: '', component: Page_Hakkimizda_Giris, name:'hakkimizda-giris'},
+                { path: 'giris', component: Page_Hakkimizda_Giris, name:'hakkimizda-giris'},
+                { path: 'sayfa1', component: Page_Hakkimizda_Sayfa1, name:'hakkimizda-sayfa1'},
+                { path: 'sayfa2', component: Page_Hakkimizda_Sayfa2, name:'hakkimizda-sayfa2'},
+            ],
+        },
+        {path: '/urunler', component: Page_Urunler},
+        {path: '/urunler/detay/:id', component: Page_Urun_Detay, name: 'urun-detay'},
+        {path: '/iletisim', component: Page_Iletisim, name: 'iletisim'},
+    ];
+    const router = new VueRouter({
+        routes: routes,
+        //mode: history => "/hakkimizda", mode: hash => "#/hakkimizda" olur. Default olarak hash tanımlıdır.
+        //history modunda dosya üzerinden html kodlarını açar gibi direk olarak browser üzerinde test işlemi yürütemezsiniz.
+        //hash modunda olduğunda dosya üzerinden direk olarak açık test işlemi yapabilirsiniz.
+        mode: 'hash',
+    });
+    const app = new Vue({
+        router: router,
+        el: '#app',
+        name: 'Uzaktan Kurs',
+        data: {
+            urunlerLink: '/urunler',
+        }
+    })
+</script>
+</body>
+</html>
