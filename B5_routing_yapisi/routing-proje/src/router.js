@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import ContactUs from './views/ContactUs.vue'
 
+//Vue.js nin routeri kullanabilmesi için bu tanımlamayı yapmamız gerekmektedir.
 Vue.use(Router)
 
 export default new Router({
