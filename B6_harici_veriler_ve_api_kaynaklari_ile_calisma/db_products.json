@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "baslik": "Adana Kebap",
+      "kategori": "Kebaplar",
+      "tutar": "24.90",
+      "resim": "../assets/img/urun-adana.jpg"
+    },
+    {
+      "baslik": "Et Döner",
+      "kategori": "Dönerler",
+      "tutar": "14",
+      "resim": "../assets/img/urun-etdoner.jpg"
+    },
+    {
+      "baslik": "Izgara Köfte",
+      "kategori": "Izgaralar",
+      "tutar": "18",
+      "resim": "../assets/img/urun-izgarakofte.jpg"
+    }
+  ]
+}

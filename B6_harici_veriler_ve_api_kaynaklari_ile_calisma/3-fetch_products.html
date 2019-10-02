@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body class="p-5">
+<div id="app">
+    <h2>Ürünler</h2>
+    <hr>
+    <p v-if="!products.length">Ürün Bulunamadı!</p>
+    <b>Toplam Adet: </b> {{products.length}}
+    <!--    <b>Toplam Tutar: </b> {{paymentTotal}}-->
+    <!--    <b>Toplam Tax: </b> {{paymentTotalTax}}-->
+
+    <div class="row" v-if="products.length">
+        <div class="col-3" v-for="(item, index) in products">
+            <div class="card">
+                <img class="card-img-top" style="height: 230px;" :src="item.resim" alt="Card Image Cap">
+                <div class="card-body">
+                    <div class="card-title">{{item.baslik}}</div>
+                    <div class="card-text">
+                        <b>Kategori:</b> {{item.kategori}}
+                        <b>Tutar:</b> {{item.tutar}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        name: 'Uzaktan Kurs',
+        data: {
+            products: [],
+        },
+        created() {
+            fetch('db_products.json')
+                .then((response) => {
+                    return response.json();
+                })
+                .then((response) => {
+                    this.products = response.products;
+                });
+        },
+    })
+</script>
+</body>
+</html>
