@@ -59,7 +59,7 @@
                     return total.toFixed(2);
                 },
                 paymentTotalTax() {
-
+                    return (this.paymentTotal * 18 / 100).toFixed(2);
                 },
             },
         })
