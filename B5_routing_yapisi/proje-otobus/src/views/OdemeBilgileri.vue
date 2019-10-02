@@ -1,7 +1,8 @@
 <template>
     <div class="container">
-        <form method="post" action="#" @submit.prevent="true">
-            <h2>Ödeme Bilgileri</h2>
+        <h2>Ödeme Bilgileri</h2>
+        <form method="post" action="#" @submit.prevent="odeme_yap">
+            <p><b>Toplam Tutar: </b>{{ toplam_tutar }}</p>
             <div class="row">
                 <div class="col-2">
                     <label class="mr-2" for="kk_no">Kart No</label>
@@ -24,7 +25,7 @@
                     <input type="text" class="form-control" name="kk_skt_yil" id="kk_skt_yil">
                 </div>
             </div>
-            <button class="btn btn-success btn-sm mt-2" @click="odeme_yap()">Ödeme Yap</button>
+            <button class="btn btn-success btn-sm float-right mt-2">Ödeme Yap</button>
         </form>
     </div>
 </template>
@@ -36,10 +37,28 @@
         name: "OdemeBilgileri",
         data() {
             return {
+                secilen_sefer: {},
+                secilen_koltuklar: [],
             };
         },
+        computed: {
+            toplam_tutar(){
+              return this.secilen_sefer.bilet_fiyati * this.secilen_koltuklar.length;
+            }
+        },
+        created() {
+            if (GlobalData.secilen_sefer == null)
+                this.$router.push({name: 'seferara'});
+            this.secilen_sefer = GlobalData.secilen_sefer;
+            this.secilen_koltuklar = GlobalData.secilen_koltuklar;
+        },
         methods: {
-            odeme_yap(){
+            odeme_yap() {
+                // this.$router.push({name: 'odemebilgileri'});
+                alert('Ödemeniz Alındı');
+                GlobalData.secilen_sefer = null;
+                GlobalData.secilen_koltuklar = null;
+                this.$router.push({name: 'seferara'});
             },
         }
     }

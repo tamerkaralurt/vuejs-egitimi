@@ -19,13 +19,13 @@
                             <router-link class="nav-link" :to="{name:'seferara'}" active-class="active">Sefer Ara</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Koltuk Seçimi</a>
+                            <router-link class="nav-link" to="/koltuk-secimi" active-class="active">Koltuk Seçimi</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Yolcu Bilgileri</a>
+                            <router-link class="nav-link" to="/yolcu-bilgileri" active-class="active">Yolcu Bilgileri</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Ödeme Bilgileri</a>
+                            <router-link class="nav-link" to="/odeme-bilgileri" active-class="active">Ödeme Bilgileri</router-link>
                         </li>
                     </ul>
                 </div>

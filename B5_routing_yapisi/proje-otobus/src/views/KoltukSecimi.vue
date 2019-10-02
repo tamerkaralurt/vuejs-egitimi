@@ -61,6 +61,8 @@
                 let sefer_id;
                 if (this.$route.params.sefer_id)
                     sefer_id = parseInt(this.$route.params.sefer_id);
+                else if(GlobalData.secilen_sefer != null && GlobalData.secilen_sefer.id)
+                    sefer_id = parseInt(GlobalData.secilen_sefer.id);
                 else
                     this.$router.push({name: 'seferara'});
 
