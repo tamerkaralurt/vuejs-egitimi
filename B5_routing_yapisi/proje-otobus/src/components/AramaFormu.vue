@@ -32,6 +32,7 @@
 </template>
 
 <script>
+    import DB from '../assets/db.json';
     export default {
         name: 'AramaFormu',
         props: {
@@ -44,6 +45,9 @@
                 gidis_tarihi: '',
                 hareket_noktalari: [],
             }
+        },
+        created(){
+            this.hareket_noktalari = DB.hareket_noktalari;
         },
         methods: {
             sefer_ara() {
