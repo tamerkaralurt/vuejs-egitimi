@@ -39,6 +39,7 @@
 
 <script>
     import DB from '../assets/db.json';
+    import {GlobalData} from "../main";
 
     export default {
         name: "KoltukSecimi",
@@ -47,6 +48,7 @@
                 seferler: [],
                 koltuklar:[],
                 secilen_koltuklar:[],
+                secilen_sefer:[],
             };
         },
         created() {
@@ -77,7 +79,10 @@
                     this.secilen_koltuklar.push(koltuk);
             },
             yolcu_bilgileri_gir(){
-
+                //başka componente toplu veri gönderme işlemleri. Global bir variable tanımlanıyor. main.js içinde...
+                GlobalData.secilen_sefer = this.secilen_sefer;
+                GlobalData.secilen_koltuklar = this.secilen_koltuklar;
+                this.$router.push({name: 'yolcubilgileri'});
             },
         }
     }

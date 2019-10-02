@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import SeferAra from "./views/SeferAra";
 import KoltukSecimi from "./views/KoltukSecimi";
+import YolcuBilgileri from "./views/YolcuBilgileri";
+import OdemeBilgileri from "./views/OdemeBilgileri";
 
 Vue.use(Router)
 
@@ -25,6 +27,16 @@ export default new Router({
             path: '/koltuk-secimi/:sefer_id?',
             name: 'koltukSecimi',
             component: KoltukSecimi
+        },
+        {
+            path: '/yolcu-bilgileri',
+            name: 'yolcubilgileri',
+            component: YolcuBilgileri
+        },
+        {
+            path: '/odeme-bilgileri',
+            name: 'odemebilgileri',
+            component: OdemeBilgileri
         },
     ]
 })
