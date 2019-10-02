@@ -18,5 +18,15 @@
       "tutar": "18",
       "resim": "../assets/img/urun-izgarakofte.jpg"
     }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "Yazılım"
+    },
+    {
+      "id": 2,
+      "title": "Web Programlama"
+    }
   ]
 }
