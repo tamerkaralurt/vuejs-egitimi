@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import AramaFormu from "./components/AramaFormu";
+import SeferAra from "./views/SeferAra";
 
 Vue.use(Router)
 
@@ -18,7 +17,7 @@ export default new Router({
         {
             path: '/sefer-ara',
             name: 'seferara',
-            component: AramaFormu
+            component: SeferAra
         },
     ]
 })

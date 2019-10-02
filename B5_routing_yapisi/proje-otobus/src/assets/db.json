@@ -26,14 +26,14 @@
       "id": 1,
       "kalkis_noktasi": 2,
       "varis_noktasi": 1,
-      "kalkis_tarihi": "2018-08-05 21:00",
+      "kalkis_tarihi": "2019-10-02 21:00",
       "bilet_fiyati": 60
     },
     {
       "id": 2,
       "kalkis_noktasi": 2,
       "varis_noktasi": 3,
-      "kalkis_tarihi": "2018-08-05 22:00",
+      "kalkis_tarihi": "2019-10-02 22:00",
       "bilet_fiyati": 65
     }
   ],
