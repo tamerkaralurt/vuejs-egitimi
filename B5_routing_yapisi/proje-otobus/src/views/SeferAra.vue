@@ -94,7 +94,7 @@
                 return saat;
             },
             sefer_sec(sefer_id) {
-
+                this.$router.push({name:'koltukSecimi', params: {sefer_id}});
             },
         }
     }
