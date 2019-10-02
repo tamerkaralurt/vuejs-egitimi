@@ -1,22 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/app.css">
 </head>
-<body class="p-5">
-<div id="app">
 
-</div>
-<script src="../assets/js/vue.js"></script>
-<script>
-    const app = new Vue({
-        el: '#app',
-        name: 'Uzaktan Kurs',
-        data: {}
-    })
-</script>
+<body class="p-5">
+    <div id="app">
+        <div class="container">
+            <button class="btn btn-sm btn-info float-right" @click="itemNew">Yeni Ürün</button>
+            <h2>Ürünler ({{ list.length }})</h2>
+            <table class="table table-bordered table-hover">
+                <tr v-if="!list.length">
+                    <td>Kayıt Yok!</td>
+                </tr>
+                <tr v-for="(item, index) in list">
+                    <td>{{ index }}</td>
+                    <td>{{ list.id }}</td>
+                    <td>{{ list.title }}</td>
+                    <td>{{ list.price }}</td>
+                    <td>
+                        <button class="btn btn-sm btn-succes" @click="itemEdit(item.id)">Düzenle</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-danger" @click="itemDelete(item.id)">Sil</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="../assets/js/vue.js"></script>
+    <!-- Axios Projeye Eklendi -->
+    <script src="../assets/js/axios.min.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            name: 'Uzaktan Kurs',
+            data: {
+                list: [],
+            },
+            methods: {
+                itemNew() {
+
+                },
+                itemEdit(id) {
+
+                },
+                itemDelete(id) {
+
+                },
+            },
+        })
+    </script>
 </body>
+
 </html>
