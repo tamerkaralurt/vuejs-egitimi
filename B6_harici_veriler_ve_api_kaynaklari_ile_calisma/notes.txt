@@ -1,0 +1,5 @@
+GET: Adres çubuğundan yapılan düz isteklerdir.
+POST: Form yardımıyla genellikler kayıt işlemleri için kullanılır.
+PUT: Bilgi güncellemek için kullanılır.
+PATCH: Tüm kolonları değiş sadece bir kolon güncelleme işlemleri yapılacaksa bu metod kullanılır.
+DELETE: Kayıt silme işlemleri için kullanılır.
