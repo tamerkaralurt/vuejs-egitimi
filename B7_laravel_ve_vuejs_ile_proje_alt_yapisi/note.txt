@@ -1,0 +1,3 @@
+// preset ile laravel üzerinde hangi js yapısını kullanacağımızı seçiyoruz.
+//type: (none, bootstrap, vue, react)
+- php artisan preset vue
