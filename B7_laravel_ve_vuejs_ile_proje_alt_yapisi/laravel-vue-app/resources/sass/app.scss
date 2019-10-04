@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:200,600');
 @import '~bootstrap/scss/bootstrap';
 
+/*
+jqurty-ui özelliklerini kullanmak istiyorsan ekleyebilirsin.
+@import '~jquery-ui/themes/base/all.css';
+*/
+
 body{
     font-family: Nunito, sans-serif;
 }

@@ -10644,6 +10644,11 @@ a.text-dark:focus {
   }
 }
 
+/*
+jqurty-ui özelliklerini kullanmak istiyorsan ekleyebilirsin.
+@import '~jquery-ui/themes/base/all.css';
+*/
+
 body {
   font-family: Nunito, sans-serif;
 }
