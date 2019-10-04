@@ -1984,11 +1984,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "UserList",
   data: function data() {
     return {
-      list: null
+      list: null,
+      error: null
     };
   },
   created: function created() {
@@ -1996,7 +1999,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     fetchData: function fetchData() {
-      this.list = [];
+      var _this = this;
+
+      this.error = null;
+      axios.get('http://127.0.0.1:8000/api/users').then(function (response) {
+        _this.list = response.data;
+      })["catch"](function (error) {
+        _this.list = null;
+        _this.error = error.response.data.message;
+      });
     }
   }
 });
@@ -33079,6 +33090,18 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("h1", [_vm._v("Kullanıcılar")]),
+    _vm._v(" "),
+    _c(
+      "button",
+      { staticClass: "btn btn-success mb-2", on: { click: _vm.fetchData } },
+      [_vm._v("Yenile")]
+    ),
+    _vm._v(" "),
+    _vm.error
+      ? _c("div", { staticClass: "alert alert-danger" }, [
+          _vm._v(_vm._s(_vm.error))
+        ])
+      : _vm._e(),
     _vm._v(" "),
     _vm.list && _vm.list.length
       ? _c(
