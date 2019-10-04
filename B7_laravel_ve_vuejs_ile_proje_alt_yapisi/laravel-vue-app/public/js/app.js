@@ -1996,11 +1996,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     fetchData: function fetchData() {
-      this.list = [{
-        id: 1,
-        name: "Tamer",
-        email: "tamerkaralurt@gmail.com"
-      }];
+      this.list = [];
     }
   }
 });

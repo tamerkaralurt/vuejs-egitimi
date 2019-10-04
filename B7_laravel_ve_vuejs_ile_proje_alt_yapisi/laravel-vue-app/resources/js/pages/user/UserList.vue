@@ -30,9 +30,7 @@
         },
         methods: {
             fetchData() {
-                this.list = [
-                    {id: 1, name: "Tamer", email: "tamerkaralurt@gmail.com"}
-                ];
+                this.list = [];
             },
         }
     }

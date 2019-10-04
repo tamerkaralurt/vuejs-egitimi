@@ -16,3 +16,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/users', function () {
+    //faker kütüphanesi kullanarak 10 tane kayıt oluşturma.
+    return factory(App\User::class, 10)->make();
+//    return factory('App\User', 10)->make();
+    /*return [
+        ['id' => 1, 'name' => "Tamer", 'email' => "tamerkaralurt@gmail.com"],
+        ['id' => 2, 'name' => "Tamer2", 'email' => "tamerkaralurt@gmail.com2"],
+    ];*/
+});
