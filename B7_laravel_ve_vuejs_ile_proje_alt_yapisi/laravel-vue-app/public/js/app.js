@@ -2002,10 +2002,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.error = null;
+      this.list = null;
       axios.get('http://127.0.0.1:8000/api/users').then(function (response) {
-        _this.list = response.data;
+        _this.list = response.data.users; // this.list = response.data.users;
       })["catch"](function (error) {
-        _this.list = null;
         _this.error = error.response.data.message;
       });
     }

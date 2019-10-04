@@ -34,10 +34,11 @@
         methods: {
             fetchData() {
                 this.error = null;
+                this.list = null;
                 axios.get('http://127.0.0.1:8000/api/users').then((response)=>{
-                    this.list = response.data;
+                    this.list = response.data.users;
+                    // this.list = response.data.users;
                 }).catch((error)=>{
-                    this.list = null;
                     this.error = error.response.data.message;
                 });
             },
