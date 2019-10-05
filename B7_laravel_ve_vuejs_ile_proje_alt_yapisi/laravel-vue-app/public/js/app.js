@@ -2036,6 +2036,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2075,10 +2079,24 @@ __webpack_require__.r(__webpack_exports__);
     },
     createData: function createData() {
       this.item = {};
+      this.$refs.userModal.errors = {};
+      this.$refs.userModal.message = '';
       $('#userModal').modal('show');
     },
     refreshData: function refreshData(item) {
       this.fetchData();
+    },
+    editData: function editData(id) {
+      var _this2 = this;
+
+      axios.get('/users/' + id).then(function (response) {
+        _this2.$refs.userModal.errors = {};
+        _this2.$refs.userModal.message = '';
+        _this2.item = response.data;
+        $('#userModal').modal('show');
+      })["catch"](function (error) {
+        if (error.response != null) _this2.error = error.response.data.message;else _this2.error = error.message;
+      });
     }
   }
 });
@@ -2158,30 +2176,48 @@ __webpack_require__.r(__webpack_exports__);
     saveItem: function saveItem() {
       var _this = this;
 
-      axios.post('/users', this.item).then(function (response) {
-        if (response.success) {
-          _this.$emit('onSaved', _this.item);
+      if (this.item.id > 0) {
+        axios.put('/users/' + this.item.id, this.item).then(function (response) {
+          if (response.data.success) {
+            _this.$emit('onSaved', _this.item);
 
-          $('#userModal').modal('hide');
-          alert(response.data.message);
-        }
-      })["catch"](function (errors) {
-        console.log(errors);
-        _this.message = errors.response.data.message;
+            $('#userModal').modal('hide');
+            alert(response.data.message);
+          }
+        })["catch"](function (errors) {
+          console.log(errors);
+          _this.message = errors.response.data.message;
 
-        if (errors) {
-          _this.errors = errors.response.data.errors;
-          /**
-           * //Tarzında da bir liste oluşturabiliriz.
-           *
-           * this.message += "<ul>";
-           * Object.keys(response.data.errors).forEach((key)=>{
-           *     this.message += "<li>" + response.data.errors[key][0] + "</li>";
-           * });
-           * this.message += "</ul>";
-           * */
-        }
-      });
+          if (errors) {
+            _this.errors = errors.response.data.errors;
+          }
+        });
+      } else {
+        axios.post('/users', this.item).then(function (response) {
+          if (response.data.success) {
+            _this.$emit('onSaved', _this.item);
+
+            $('#userModal').modal('hide');
+            alert(response.data.message);
+          }
+        })["catch"](function (errors) {
+          console.log(errors);
+          _this.message = errors.response.data.message;
+
+          if (errors) {
+            _this.errors = errors.response.data.errors;
+            /**
+             * //Tarzında da bir liste oluşturabiliriz.
+             *
+             * this.message += "<ul>";
+             * Object.keys(response.data.errors).forEach((key)=>{
+             *     this.message += "<li>" + response.data.errors[key][0] + "</li>";
+             * });
+             * this.message += "</ul>";
+             * */
+          }
+        });
+      }
     }
   }
 });
@@ -33372,6 +33408,7 @@ var render = function() {
     "div",
     [
       _c("user-modal", {
+        ref: "userModal",
         attrs: { item: _vm.item },
         on: { onSaved: _vm.refreshData }
       }),
@@ -33379,7 +33416,7 @@ var render = function() {
       _c("div", { staticClass: "button-group float-right" }, [
         _c(
           "button",
-          { staticClass: "btn btn-success mb-2", on: { click: _vm.fetchData } },
+          { staticClass: "btn btn-info mb-2", on: { click: _vm.fetchData } },
           [_vm._v("Yenile")]
         ),
         _vm._v(" "),
@@ -33417,7 +33454,22 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(name))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(email))])
+                  _c("td", [_vm._v(_vm._s(email))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success btn-sm",
+                        on: {
+                          click: function($event) {
+                            return _vm.editData(id)
+                          }
+                        }
+                      },
+                      [_vm._v("Düzenle")]
+                    )
+                  ])
                 ])
               })
             ],
@@ -33443,7 +33495,9 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("İsim")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Email")])
+      _c("th", [_vm._v("Email")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("İşlem")])
     ])
   }
 ]

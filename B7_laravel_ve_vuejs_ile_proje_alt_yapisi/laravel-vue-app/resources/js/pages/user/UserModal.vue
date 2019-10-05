@@ -61,30 +61,48 @@
         },
         methods: {
             saveItem() {
-                axios.post('/users', this.item)
-                    .then((response) => {
-                        if (response.data.success) {
-                            this.$emit('onSaved', this.item);
-                            $('#userModal').modal('hide');
-                            alert(response.data.message);
-                        }
-                    })
-                    .catch((errors) => {
-                        console.log(errors);
-                        this.message = errors.response.data.message;
-                        if (errors) {
-                            this.errors = errors.response.data.errors;
-                            /**
-                             * //Tarzında da bir liste oluşturabiliriz.
-                             *
-                             * this.message += "<ul>";
-                             * Object.keys(response.data.errors).forEach((key)=>{
-                             *     this.message += "<li>" + response.data.errors[key][0] + "</li>";
-                             * });
-                             * this.message += "</ul>";
-                             * */
-                        }
-                    });
+                if (this.item.id > 0) {
+                    axios.put('/users/' + this.item.id, this.item)
+                        .then((response) => {
+                            if (response.data.success) {
+                                this.$emit('onSaved', this.item);
+                                $('#userModal').modal('hide');
+                                alert(response.data.message);
+                            }
+                        })
+                        .catch((errors) => {
+                            console.log(errors);
+                            this.message = errors.response.data.message;
+                            if (errors) {
+                                this.errors = errors.response.data.errors;
+                            }
+                        });
+                } else {
+                    axios.post('/users', this.item)
+                        .then((response) => {
+                            if (response.data.success) {
+                                this.$emit('onSaved', this.item);
+                                $('#userModal').modal('hide');
+                                alert(response.data.message);
+                            }
+                        })
+                        .catch((errors) => {
+                            console.log(errors);
+                            this.message = errors.response.data.message;
+                            if (errors) {
+                                this.errors = errors.response.data.errors;
+                                /**
+                                 * //Tarzında da bir liste oluşturabiliriz.
+                                 *
+                                 * this.message += "<ul>";
+                                 * Object.keys(response.data.errors).forEach((key)=>{
+                                 *     this.message += "<li>" + response.data.errors[key][0] + "</li>";
+                                 * });
+                                 * this.message += "</ul>";
+                                 * */
+                            }
+                        });
+                }
             },
         }
     }
