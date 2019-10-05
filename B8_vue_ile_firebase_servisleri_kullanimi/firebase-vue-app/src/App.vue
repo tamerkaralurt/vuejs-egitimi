@@ -47,8 +47,23 @@
 </template>
 
 <script>
+    import firebase from 'firebase';
+
     export default {
-        name: 'App'
+        name: 'App',
+        data() {
+            return {
+                currentUser: {},
+            }
+        },
+        mounted() {
+            this.currentUser = firebase.auth().currentUser;
+        },
+        methods:{
+            logout(){
+                firebase.auth().signOut();
+            }
+        }
     }
 </script>
 

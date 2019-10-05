@@ -19,6 +19,8 @@
 </template>
 
 <script>
+    import firebase from 'firebase';
+
     export default {
         name: 'login',
         data() {
@@ -29,7 +31,13 @@
         },
         methods: {
             login() {
-
+                firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+                    .then((user) => {
+                        toastr.success('Oturum Açma Başarılı');
+                        this.$router.replace('dashboard');
+                    }, (error) => {
+                        toastr.error(error.message);
+                    });
             }
         }
     }

@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import './firebase'
+import firebase from "firebase";
 
 window.$ = require('jquery');
 import 'bootstrap/dist/js/bootstrap.min';
@@ -15,12 +16,16 @@ toastr.options = {
   "progressBar": true,
 };
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-})
+let app;
+firebase.auth().onAuthStateChanged((user) => {
+  if (!app){
+    app = new Vue({
+      el: '#app',
+      router,
+      components: { App },
+      template: '<App/>'
+    });
+  }
+});
