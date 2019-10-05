@@ -1,7 +1,11 @@
 <template>
     <div>
+        <user-modal :item="item" v-on:onSaved="refreshData"></user-modal>
+        <div class="button-group float-right">
+            <button class="btn btn-success mb-2" @click="fetchData">Yenile</button>
+            <button class="btn btn-success mb-2" @click="createData">Yeni Kullanıcı</button>
+        </div>
         <h1>Kullanıcılar</h1>
-        <button class="btn btn-success mb-2" @click="fetchData">Yenile</button>
         <div v-if="error" class="alert alert-danger">{{ error }}</div>
         <table class="table table-bordered table-hover" v-if="list && list.length">
             <tr>
@@ -22,14 +26,20 @@
 
 <script>
     import Pagination from "../../components/Pagination";
+    import UserModal from "../../pages/user/UserModal";
 
     export default {
         name: "UserList",
+        components: {
+            "pagination": Pagination,
+            "user-modal": UserModal,
+        },
         data() {
             return {
                 list: null,
                 error: null,
                 meta: null,
+                item: {},
             }
         },
         created() {
@@ -39,18 +49,25 @@
             fetchData($page = 1) {
                 this.error = null;
                 this.list = null;
-                axios.get('http://127.0.0.1:8000/api/users', {params: {'page': $page}}).then((response) => {
+                axios.get('/users', {params: {'page': $page}}).then((response) => {
                     this.list = response.data.data;
                     this.meta = response.data.meta;
                     // this.list = response.data.users;
                 }).catch((error) => {
-                    this.error = error.response.data.message;
+                    if(error.response != null)
+                        this.error = error.response.data.message;
+                    else
+                        this.error = error.message;
                 });
             },
+            createData() {
+                this.item = {};
+                $('#userModal').modal('show');
+            },
+            refreshData(item){
+                this.fetchData();
+            },
         },
-        components: {
-            pagination: Pagination,
-        }
     }
 </script>
 
