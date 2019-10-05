@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>DashBoard</h1>
-    <p>{{ currentUser.email }} olarak giriş yaptınız.</p>
+    <p v-if="currentUser">{{ currentUser.email }} olarak giriş yaptınız.</p>
   </div>
 </template>
 
