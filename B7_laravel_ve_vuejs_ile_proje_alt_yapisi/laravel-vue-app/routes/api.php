@@ -40,7 +40,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return \App\User::all();
 });*/
 
-Route::get('/users', function () {
+/*Route::get('/users', function () {
     $users = \App\User::all();
 //    //Resource sınıfları "new" anahtarı ile kullanıldığında sadece bir kayıt çekebildiğimiz yapılarak olarak kullanırız.
 //    return new UserResource(App\User::find(1));
@@ -50,5 +50,11 @@ Route::get('/users', function () {
 //    return UserResource::collection(App\User::all());
 //    //Sayfalandırma yapmak istersek.
     return UserResource::collection(App\User::paginate(10));
-});
+});*/
 
+//Route::get('users', 'Api\UserController@index');
+//Route::get('users/{id}', 'Api\UserController@show');
+//Route::delete('users/{id}', 'Api\UserController@destroy');
+//Yerine,
+Route::apiResource('users', 'Api\UserController'); //Toplu olarak tanımlanmış olacak.
+// ->only(['index', 'show']); //only: ile sadece belli fonksiyonların çalıştırılacağını sınırlamış oluyoruz.
