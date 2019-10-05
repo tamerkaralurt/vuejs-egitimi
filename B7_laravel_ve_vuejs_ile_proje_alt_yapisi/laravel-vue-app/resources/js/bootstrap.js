@@ -1,3 +1,15 @@
+import $ from 'jquery';
+import 'bootstrap/dist/js/bootstrap.min';
+window.$ = window.jQuery = $;
+window.swal = require('sweetalert2');
+window.toastr = require('toastr');
+
+toastr.options = {
+    preventDuplicates: true,
+    showDuration: 500,
+    positionClass: 'toast-bottom-right',
+};
+
 window._ = require('lodash');
 
 /**

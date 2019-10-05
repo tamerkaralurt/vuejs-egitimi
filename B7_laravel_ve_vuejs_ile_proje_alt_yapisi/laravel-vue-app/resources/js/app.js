@@ -1,8 +1,5 @@
-import $ from 'jquery';
-import 'bootstrap/dist/js/bootstrap.min';
-window.$ = window.jQuery = $;
-window.Vue = require('vue');
 require('./bootstrap');
+window.Vue = require('vue');
 // Buna gerek yok ama jquery-ui özelliklerini kullanmak istersen projeye ekleyebilirsin.
 // import 'jquery-ui/ui/widgets/datepicker.js';
 
