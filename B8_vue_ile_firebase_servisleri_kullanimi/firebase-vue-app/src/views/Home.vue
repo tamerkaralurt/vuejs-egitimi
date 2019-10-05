@@ -1,15 +1,14 @@
 <template>
   <div class="container">
-    {{msg}}
+    Hoşgeldiniz.
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
   }
 }

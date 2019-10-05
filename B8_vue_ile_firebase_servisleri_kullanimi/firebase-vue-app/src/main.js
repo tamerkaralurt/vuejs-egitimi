@@ -4,6 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+window.$ = require('jquery');
+import 'bootstrap/dist/js/bootstrap.min';
+window.toastr = require('toastr');
+toastr.options = {
+  "positionClass": "toast-top-right",
+  "preventDuplicates": true,
+  "showDuration": "300",
+  "progressBar": true,
+};
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
