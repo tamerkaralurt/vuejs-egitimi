@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import './firebase'
 
 window.$ = require('jquery');
 import 'bootstrap/dist/js/bootstrap.min';
