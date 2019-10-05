@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Resources\UserResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +33,22 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // php artisan config:cache //cache üzerindeki config bilgilerini silip yerine yeni güncel config dosyalarını çeker. .env gibi
 });*/
 
-Route::get('/users', function () {
+/*Route::get('/users', function () {
     $users = \App\User::all();
     return response()->json(['users' => $users], 200);
 //    return response()->json(\App\User::all(),200);
 //    return \App\User::all();
+});*/
+
+Route::get('/users', function () {
+    $users = \App\User::all();
+//    //Resource sınıfları "new" anahtarı ile kullanıldığında sadece bir kayıt çekebildiğimiz yapılarak olarak kullanırız.
+//    return new UserResource(App\User::find(1));
+//    //Resource sınıfını toplu bir veri çekerken kullanmak istersek,
+//    //Resource kullandığımızda oluşan veriler "data" kapsayıcısı içinde otomatik olarak gelmektedir. Bunu kaldırmak için resource'un "withoutWrapping" özelliğini çağırmamız gerekmektedir.
+//    UserResource::withoutWrapping();
+//    return UserResource::collection(App\User::all());
+//    //Sayfalandırma yapmak istersek.
+    return UserResource::collection(App\User::paginate(10));
 });
+
