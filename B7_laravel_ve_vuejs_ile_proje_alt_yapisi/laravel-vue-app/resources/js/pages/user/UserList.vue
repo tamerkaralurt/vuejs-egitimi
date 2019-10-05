@@ -16,32 +16,40 @@
             </tr>
         </table>
         <p v-else>Kayıt Bulunamadı</p>
+        <pagination :meta="meta" v-on:pageChange="fetchData"/>
     </div>
 </template>
 
 <script>
+    import Pagination from "../../components/Pagination";
+
     export default {
         name: "UserList",
         data() {
             return {
                 list: null,
                 error: null,
+                meta: null,
             }
         },
         created() {
             this.fetchData();
         },
         methods: {
-            fetchData() {
+            fetchData($page = 1) {
                 this.error = null;
                 this.list = null;
-                axios.get('http://127.0.0.1:8000/api/users').then((response)=>{
-                    this.list = response.data.users;
+                axios.get('http://127.0.0.1:8000/api/users', {params: {'page': $page}}).then((response) => {
+                    this.list = response.data.data;
+                    this.meta = response.data.meta;
                     // this.list = response.data.users;
-                }).catch((error)=>{
+                }).catch((error) => {
                     this.error = error.response.data.message;
                 });
             },
+        },
+        components: {
+            pagination: Pagination,
         }
     }
 </script>

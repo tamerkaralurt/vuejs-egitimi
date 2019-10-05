@@ -12,11 +12,11 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        $users = UserResource::collection(User::paginate(10));
+        $users = UserResource::collection(User::orderByDesc('id')->paginate(25));
 //        return response()->json(['users' => $users], 200);r
         return $users;
     }
