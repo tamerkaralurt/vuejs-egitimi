@@ -63,7 +63,7 @@
             saveItem() {
                 axios.post('/users', this.item)
                     .then((response) => {
-                        if (response.success) {
+                        if (response.data.success) {
                             this.$emit('onSaved', this.item);
                             $('#userModal').modal('hide');
                             alert(response.data.message);
