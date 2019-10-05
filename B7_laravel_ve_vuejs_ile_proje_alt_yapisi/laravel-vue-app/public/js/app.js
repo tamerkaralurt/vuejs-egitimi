@@ -2040,6 +2040,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2096,6 +2097,26 @@ __webpack_require__.r(__webpack_exports__);
         $('#userModal').modal('show');
       })["catch"](function (error) {
         if (error.response != null) _this2.error = error.response.data.message;else _this2.error = error.message;
+      });
+    },
+    deleteData: function deleteData(id) {
+      var _this3 = this;
+
+      swal.fire({
+        title: 'Emin misiniz?',
+        text: 'Silmek istediğinize emin misiniz?',
+        type: 'warning',
+        showCancelButton: 'true',
+        cancelButtonText: 'İptal',
+        confirmButtonText: 'Sil'
+      }).then(function (result) {
+        if (result.value) {
+          axios["delete"]('/users/' + id).then(function (response) {
+            _this3.fetchData();
+
+            toastr.success('Kayıt Silindi!');
+          });
+        }
       });
     }
   }
@@ -2182,7 +2203,7 @@ __webpack_require__.r(__webpack_exports__);
             _this.$emit('onSaved', _this.item);
 
             $('#userModal').modal('hide');
-            alert(response.data.message);
+            toastr.success(response.data.message, 'Kullanıcı');
           }
         })["catch"](function (errors) {
           console.log(errors);
@@ -2198,7 +2219,7 @@ __webpack_require__.r(__webpack_exports__);
             _this.$emit('onSaved', _this.item);
 
             $('#userModal').modal('hide');
-            alert(response.data.message);
+            toastr.success(response.data.message, 'Kullanıcı');
           }
         })["catch"](function (errors) {
           console.log(errors);
@@ -36871,6 +36892,19 @@ var render = function() {
                         }
                       },
                       [_vm._v("Düzenle")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger btn-sm",
+                        on: {
+                          click: function($event) {
+                            return _vm.deleteData(id)
+                          }
+                        }
+                      },
+                      [_vm._v("Sil")]
                     )
                   ])
                 ])

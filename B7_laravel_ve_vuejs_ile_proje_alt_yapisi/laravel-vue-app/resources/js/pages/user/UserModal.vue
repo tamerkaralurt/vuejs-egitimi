@@ -67,7 +67,7 @@
                             if (response.data.success) {
                                 this.$emit('onSaved', this.item);
                                 $('#userModal').modal('hide');
-                                alert(response.data.message);
+                                toastr.success(response.data.message, 'Kullanıcı');
                             }
                         })
                         .catch((errors) => {
@@ -83,7 +83,7 @@
                             if (response.data.success) {
                                 this.$emit('onSaved', this.item);
                                 $('#userModal').modal('hide');
-                                alert(response.data.message);
+                                toastr.success(response.data.message, 'Kullanıcı');
                             }
                         })
                         .catch((errors) => {

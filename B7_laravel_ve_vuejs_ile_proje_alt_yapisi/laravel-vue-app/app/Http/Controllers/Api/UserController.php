@@ -97,11 +97,19 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param User $user
+     * @return void
+     * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        /**
+         * Laravel soft delete özelliği araştırılacak!
+         */
+        $user->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Silme İşlemi Başarılı'
+        ], 200);
     }
 }

@@ -20,6 +20,7 @@
                 <td>{{email}}</td>
                 <td>
                     <button class="btn btn-success btn-sm" @click="editData(id)">Düzenle</button>
+                    <button class="btn btn-danger btn-sm" @click="deleteData(id)">Sil</button>
                 </td>
             </tr>
         </table>
@@ -58,7 +59,7 @@
                     this.meta = response.data.meta;
                     // this.list = response.data.users;
                 }).catch((error) => {
-                    if(error.response != null)
+                    if (error.response != null)
                         this.error = error.response.data.message;
                     else
                         this.error = error.message;
@@ -70,22 +71,40 @@
                 this.$refs.userModal.message = '';
                 $('#userModal').modal('show');
             },
-            refreshData(item){
+            refreshData(item) {
                 this.fetchData();
             },
-            editData(id){
+            editData(id) {
                 axios.get('/users/' + id).then((response) => {
                     this.$refs.userModal.errors = {};
                     this.$refs.userModal.message = '';
                     this.item = response.data;
                     $('#userModal').modal('show');
                 }).catch((error) => {
-                    if(error.response != null)
+                    if (error.response != null)
                         this.error = error.response.data.message;
                     else
                         this.error = error.message;
                 });
-            }
+            },
+            deleteData(id) {
+                swal.fire({
+                    title: 'Emin misiniz?',
+                    text: 'Silmek istediğinize emin misiniz?',
+                    type: 'warning',
+                    showCancelButton: 'true',
+                    cancelButtonText: 'İptal',
+                    confirmButtonText: 'Sil',
+                }).then(result => {
+                    if (result.value) {
+                        axios.delete('/users/' + id)
+                            .then(response => {
+                                this.fetchData();
+                                toastr.success('Kayıt Silindi!');
+                            });
+                    }
+                });
+            },
         },
     }
 </script>
