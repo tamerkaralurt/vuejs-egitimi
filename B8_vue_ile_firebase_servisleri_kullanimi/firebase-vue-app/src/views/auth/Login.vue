@@ -22,7 +22,10 @@
     export default {
         name: 'login',
         data() {
-            return {}
+            return {
+                email: '',
+                password: '',
+            }
         },
         methods: {
             login() {
