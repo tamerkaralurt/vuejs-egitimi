@@ -10,6 +10,14 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <div class="alert alert-danger" v-if="message">
+                            <strong>{{message}}</strong>
+                            <ul class="p-2 pl-4 m-0">
+                                <li v-for="error in errors">
+                                    {{error[0]}}
+                                </li>
+                            </ul>
+                        </div>
                         <form class="form" @submit.prevent="true">
                             <div class="form-group row">
                                 <label for="name" class="col-sm-3 col-form-label">Kullanıcı Adı</label>
@@ -45,23 +53,37 @@
     export default {
         name: "UserModal",
         props: ['item'],
+        data() {
+            return {
+                errors: {},
+                message: null,
+            }
+        },
         methods: {
             saveItem() {
                 axios.post('/users', this.item)
                     .then((response) => {
-                        if(response.success){
+                        if (response.success) {
                             this.$emit('onSaved', this.item);
                             $('#userModal').modal('hide');
                             alert(response.data.message);
-                        }else{
-                            alert(response.data.message);
-                            if(response.data.errors){
-                                console.log(response.data.errors);
-                            }
                         }
                     })
-                    .catch((error) => {
-                        console.log(error);
+                    .catch((errors) => {
+                        console.log(errors);
+                        this.message = errors.response.data.message;
+                        if (errors) {
+                            this.errors = errors.response.data.errors;
+                            /**
+                             * //Tarzında da bir liste oluşturabiliriz.
+                             *
+                             * this.message += "<ul>";
+                             * Object.keys(response.data.errors).forEach((key)=>{
+                             *     this.message += "<li>" + response.data.errors[key][0] + "</li>";
+                             * });
+                             * this.message += "</ul>";
+                             * */
+                        }
                     });
             },
         }

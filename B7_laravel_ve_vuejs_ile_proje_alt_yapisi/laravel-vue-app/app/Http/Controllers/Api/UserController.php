@@ -40,7 +40,7 @@ class UserController extends Controller
                 'success' => false,
                 'message' => 'Bir Hata Oluştu',
                 'errors' => $validator->errors(),
-            ]);
+            ],422);
         }
         $user = $request->only('name', 'email', 'password');
         $user['password'] = bcrypt($user['password']);
@@ -48,7 +48,7 @@ class UserController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Kayıt Başarılı'
-        ]);
+        ], 200);
     }
 
     /**

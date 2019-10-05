@@ -2137,9 +2137,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "UserModal",
   props: ['item'],
+  data: function data() {
+    return {
+      errors: {},
+      message: null
+    };
+  },
   methods: {
     saveItem: function saveItem() {
       var _this = this;
@@ -2150,15 +2164,23 @@ __webpack_require__.r(__webpack_exports__);
 
           $('#userModal').modal('hide');
           alert(response.data.message);
-        } else {
-          alert(response.data.message);
-
-          if (response.data.errors) {
-            console.log(response.data.errors);
-          }
         }
-      })["catch"](function (error) {
-        console.log(error);
+      })["catch"](function (errors) {
+        console.log(errors);
+        _this.message = errors.response.data.message;
+
+        if (errors) {
+          _this.errors = errors.response.data.errors;
+          /**
+           * //Tarzında da bir liste oluşturabiliriz.
+           *
+           * this.message += "<ul>";
+           * Object.keys(response.data.errors).forEach((key)=>{
+           *     this.message += "<li>" + response.data.errors[key][0] + "</li>";
+           * });
+           * this.message += "</ul>";
+           * */
+        }
       });
     }
   }
@@ -33484,6 +33506,27 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
+                _vm.message
+                  ? _c("div", { staticClass: "alert alert-danger" }, [
+                      _c("strong", [_vm._v(_vm._s(_vm.message))]),
+                      _vm._v(" "),
+                      _c(
+                        "ul",
+                        { staticClass: "p-2 pl-4 m-0" },
+                        _vm._l(_vm.errors, function(error) {
+                          return _c("li", [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(error[0]) +
+                                "\n                            "
+                            )
+                          ])
+                        }),
+                        0
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
                 _c(
                   "form",
                   {
