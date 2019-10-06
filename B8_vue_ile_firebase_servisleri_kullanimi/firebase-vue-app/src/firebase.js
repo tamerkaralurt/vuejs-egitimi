@@ -11,3 +11,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+//firebase database oluşturuldu.
+export const db = firebase.database();
+export const productsRef = db.ref('products');
