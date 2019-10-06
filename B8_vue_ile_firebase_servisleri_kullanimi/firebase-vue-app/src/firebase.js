@@ -1,4 +1,12 @@
-import firebase from 'firebase'
+import Vue from 'vue'
+import firebase from 'firebase';
+
+//VueFire Eklendi.
+import {firestorePlugin} from 'vuefire';
+
+Vue.use(firestorePlugin);
+
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyBhlELC5lqA6VWVVgZKfkvZc_ixBdxP7dk",

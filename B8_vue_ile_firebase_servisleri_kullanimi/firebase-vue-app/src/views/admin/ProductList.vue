@@ -27,10 +27,20 @@
         name: "ProductList",
         data() {
             return {
-                products: [],
+                //products: [],
             }
         },
-        mounted() {
+        firebase:{
+            //productsRef içindeki verileri products içine alıyoruz.
+            products: productsRef,
+        },
+        methods: {
+            editItem(product) {
+            },
+            deleteItem(product) {
+            },
+        },
+        /*mounted() {
             //once: tanımlı olan obje içindeki verileri bir kere olarak çekiyor.
             productsRef.once("value")
                 .then(data => {
@@ -44,13 +54,7 @@
                         });
                     }
                 });
-        },
-        methods: {
-            editItem(product) {
-            },
-            deleteItem(product) {
-            },
-        }
+        },*/
     }
 </script>
 
